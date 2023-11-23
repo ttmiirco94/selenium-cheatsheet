@@ -26,24 +26,24 @@ public class Google {
         assertEquals(driver.getCurrentUrl(), "https://www.google.de/");
     }
 
-    public WebElement getInputSearchBarElement() {
+    public WebElement getInputSearchBar() {
         return driver.findElement(inputSearchBar);
     }
 
-    public String getInputSearchBar() {
-        return getInputSearchBarElement().getAttribute("value");
-    }
-
     public void setInputSearchBar(String value) {
-        getInputSearchBarElement().sendKeys(value);
+        getInputSearchBar().sendKeys(value);
     }
 
-    public WebElement getButtonSearchElement() {
+    public String getInputSearchBarValue() {
+        return getInputSearchBar().getAttribute("value");
+    }
+
+    public WebElement getButtonSearch() {
         return driver.findElement(buttonSearch);
     }
 
     public void clickButtonSearch() {
-        getButtonSearchElement().click();
+        getButtonSearch().click();
     }
 
     public WebElement getButtonAcceptAll() {
@@ -58,7 +58,7 @@ public class Google {
         this.goToPage();
         this.clickButtonAcceptAll();
         this.setInputSearchBar(searchText);
-        assertEquals(this.getInputSearchBar(), searchText);
+        assertEquals(this.getInputSearchBarValue(), searchText);
         this.clickButtonSearch();
     }
 }

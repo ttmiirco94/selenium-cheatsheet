@@ -4,6 +4,9 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.Google;
 
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
+
 public class GoogleTest extends TestUtilities {
 
     @Test
@@ -13,6 +16,9 @@ public class GoogleTest extends TestUtilities {
         Google google = new Google(driver);
         google.goToPage();
         google.verifyUrl();
+        assertTrue(google.getButtonAcceptAll().isDisplayed());
+        assertTrue(google.getInputSearchBar().isDisplayed());
+        assertTrue(google.getButtonSearch().isDisplayed());
     }
 
     @Test
@@ -22,7 +28,10 @@ public class GoogleTest extends TestUtilities {
         Google google = new Google(driver);
         google.goToPage();
         google.verifyUrl();
+        assertTrue(google.getButtonAcceptAll().isDisplayed());
+        google.getButtonAcceptAll();
         google.clickButtonAcceptAll();
+        assertFalse(google.getButtonAcceptAll().isDisplayed());
     }
 
     @Test
