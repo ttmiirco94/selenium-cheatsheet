@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Google Page Tests" verbose="1" parallel="tests">
+	<parameter name="browser" value="firefox"/>
+	<test name="Load Google Page Test #1">
+		<classes>
+			<class name="OpenGoogleTest" />
+		</classes>
+	</test>
+	<test name="Load Google Page Test #2">
+		<classes>
+			<class name="OpenGoogleTest" />
+		</classes>
+	</test>
+	<test name="Load Google Page Test #3">
+		<classes>
+			<class name="OpenGoogleTest" />
+		</classes>
+	</test>
+	<test name="Load Google Page Test #4">
+		<classes>
+			<class name="OpenGoogleTest" />
+		</classes>
+	</test>
+	<test name="Load Google Page Test #5">
+		<classes>
+			<class name="OpenGoogleTest" />
+		</classes>
+	</test>
+</suite>
