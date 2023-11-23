@@ -2,8 +2,6 @@ import helper.TestUtilities;
 import org.testng.annotations.Test;
 import pages.GooglePOM;
 
-import static org.testng.Assert.assertEquals;
-
 public class OpenGoogleTest extends TestUtilities {
 
     @Test
