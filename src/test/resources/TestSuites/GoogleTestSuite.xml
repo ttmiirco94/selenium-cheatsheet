@@ -2,29 +2,32 @@
 
 <suite name="Google Page Tests" verbose="1" parallel="tests">
 	<parameter name="browser" value="firefox"/>
-	<test name="Load Google Page Test #1">
+	<test name="Load Google page">
 		<classes>
-			<class name="OpenGoogleTest" />
+			<class name="GoogleTest">
+				<methods>
+					<include name="loadPage"/>
+				</methods>
+			</class>
 		</classes>
 	</test>
-	<test name="Load Google Page Test #2">
+	<test name="Click accept all">
 		<classes>
-			<class name="OpenGoogleTest" />
+			<class name="GoogleTest">
+				<methods>
+					<include name="clickAcceptAllButton"/>
+				</methods>
+			</class>
 		</classes>
 	</test>
-	<test name="Load Google Page Test #3">
+	<test name="Search text">
+		<parameter name="searchInput" value="Cypress"/>
 		<classes>
-			<class name="OpenGoogleTest" />
-		</classes>
-	</test>
-	<test name="Load Google Page Test #4">
-		<classes>
-			<class name="OpenGoogleTest" />
-		</classes>
-	</test>
-	<test name="Load Google Page Test #5">
-		<classes>
-			<class name="OpenGoogleTest" />
+			<class name="GoogleTest">
+				<methods>
+					<include name="searchText"/>
+				</methods>
+			</class>
 		</classes>
 	</test>
 </suite>
